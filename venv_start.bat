@@ -1,1 +1,1 @@
-powershell .\django_env\bin\activate.ps1
+start .\django_env\Scripts\activate.bat
