@@ -9,7 +9,10 @@ base_api_url = getattr(settings, 'BASE_API_URL', '')
 def index(request):
     response = requests.get(f'{base_api_url}/books', auth=('admin', 'admin'))
     if response.status_code == 200:
-        return render(request, "books/index.html", {"books": json.loads(response.content)})
+        return render(request, "books/index.html", {
+            "books": json.loads(response.content),
+            "subtitle": "Список книг"
+        })
     else:
         return HttpResponse('Ошибка при получении данных')
 

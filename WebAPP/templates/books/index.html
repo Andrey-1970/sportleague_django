@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block subtitle %}
-  <h2>Список книг</h2>
+  <h2>{{ subtitle }}</h2>
 {% endblock %}
 
 {% block content %}
   <ul class="list-group">
     {% for book in books %}
     <li>
-      <a class="list-group-item" href="{% url 'onebook' book.id %}">{{ book.id }}: {{ book.title }} - {{ book.author }}</a>
+      <a class="list-group-item-danger" 
+         href="{% url 'onebook' book.id %}">{{ book.id }}: {{ book.title }} - {{ book.author }}</a>
     </li>
     {% endfor %}
   </ul>
